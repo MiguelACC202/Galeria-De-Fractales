@@ -34,5 +34,5 @@ for y in range (imgy):
             image.putpixel((x,y),(r,g,b))
 image
 ```
-![Mi primer Fractal](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton1.png)
+![newton1](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton1.png)
      
