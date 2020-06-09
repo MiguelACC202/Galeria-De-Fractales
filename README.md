@@ -1,18 +1,38 @@
-## Fractales de Newton, Raíces complejas
+<style TYPE="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML-full"></script>
+# Fractales de Newton, Raíces complejas
   
-  ***Definición*** Cuando la búsqueda de la solución de un problema de aplicación implica la resolución de ecuaciones no lineales se hace uso de métodos numéricos. Siendo el método de Newton uno de los más usados debido a su versatilidad y agilidad, es de gran interés emplearlo especialmente para aproximar soluciones de sistemas de ecuaciones no lineales. Solucionar ecuaciones con variable compleja a través del método de Newton tiene una aplicación muy interesante en el campo de los fractales como es la del problema de Cayley y las figuras fractales que se producen a partir de la convergencia, divergencia e incluso la eficiencia del método. En este artículo se muestra el estudio del problema de Cayley a través de la generalización del método de Newton a $mathds{R}^{2}$. Además, se presentan algunos fractales producidos por iteraciones del método de Newton en los complejos.
+## ***Definición*** 
+Cuando la búsqueda de la solución de un problema de aplicación implica la resolución de ecuaciones no lineales se hace uso de métodos numéricos. Siendo el método de Newton uno de los más usados debido a su versatilidad y agilidad, es de gran interés emplearlo especialmente para aproximar soluciones de sistemas de ecuaciones no lineales. Solucionar ecuaciones con variable compleja a través del método de Newton tiene una aplicación muy interesante en el campo de los fractales como es la del problema de Cayley y las figuras fractales que se producen a partir de la convergencia, divergencia e incluso la eficiencia del método. En este artículo se muestra el estudio del problema de Cayley a través de la generalización del método de Newton a $mathds{R}^{2}$. Además, se presentan algunos fractales producidos por iteraciones del método de Newton en los complejos.
   
   
- ***Algunos Fractales*** Los siguientes ejemplos de fractales son realizados con codigo Python, donde se relacionan funciones polonomiales y/o trigonometricas.
+ ### ***Algunos Fractales*** 
+ Los siguientes ejemplos de fractales son realizados con codigo Python, donde se relacionan funciones polonomiales y/o trigonometricas.
  
- **-** los paquetes necesarios para la implementación de los codigos de los fractales son:
+**-** los paquetes necesarios para la implementación de los codigos de los fractales son:
  ```
  import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
  ```
  
- *Ejemplo 1* $f(z)= z^{3}+z^{2}$
+ #### *Ejemplo 1* $f(z)= z^{3}+z^{2}$
 ```
 def f(z):
   return z**5+z**2
@@ -45,7 +65,7 @@ image
 ```
 ![newton1](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton1.png)
 
- *Ejemplo 2* $f(z)= z+z^{2}-z^{3}$
+ #### *Ejemplo 2* $f(z)= z+z^{2}-z^{3}$
  ```
  def f(z):
   return z+z**2-z**3
@@ -78,7 +98,7 @@ image
  ```
  ![newton2](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton2.png)
  
-  *Ejemplo 3* $f(z)= \sin(z^{3})$
+ #### *Ejemplo 3* $f(z)= \sin(z^{3})$
  ```
  def f(z):
   return np.sin(z**3)
@@ -111,7 +131,7 @@ image
  ```
  ![newton3](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton3.png)
  
- *Ejemplo 4* $f(z)= \cos(z)+z^{5}-\sin(z)$
+#### *Ejemplo 4* $f(z)= \cos(z)+z^{5}-\sin(z)$
  ```
  def f(z):
   return np.cos(z)+z**5-np.sin(z)
@@ -144,7 +164,7 @@ image
  ```
  ![newton4](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton4.png)
  
-  *Ejemplo 5* $f(z)= (z^{7}-z^{5})*\sin(z)$
+ #### *Ejemplo 5* $f(z)= (z^{7}-z^{5})*\sin(z)$
  ```
  def f(z):
   return (z**7-z**5)*np.sin(z)
@@ -177,5 +197,10 @@ image
  ```
  ![newton5](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton5.png)
  
+
+# Conjuntos De Julia
+ 
+ ## ***Definición*** 
+Dado un sistema dinámico complejo ( C , f ) se define el conjunto de Julia asociado a f , J ( f ) , como el conjunto de sus puntos periódicos repulsivos. Existen varias técnicas asociadas a cada sistema dinámico (dependiendo de la función f ). Vamos a describir fundamentalmente la determinación de los conjuntos de Julia asociados a los sistemas dinámicos complejos cuadráticos, que son los basados en la función f ( z ) = z ^ 2 + c, siendo c un numero complejo.
  
      
