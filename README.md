@@ -27,7 +27,7 @@ Cuando la búsqueda de la solución de un problema de aplicación implica la res
  
 **-** los paquetes necesarios para la implementación de los codigos de los fractales son:
  ```
- import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
  ```
@@ -201,6 +201,24 @@ image
 # Conjuntos De Julia
  
 ## ***Definición*** 
-Dado un sistema dinámico complejo ( C , f ) se define el conjunto de Julia asociado a f , J ( f ) , como el conjunto de sus puntos periódicos repulsivos. Existen varias técnicas asociadas a cada sistema dinámico (dependiendo de la función f ). Vamos a describir fundamentalmente la determinación de los conjuntos de Julia asociados a los sistemas dinámicos complejos cuadráticos, que son los basados en la función f ( z ) = z ^ 2 + c, siendo c un numero complejo.
+Los conjuntos de Julia, así llamados por el matemático Gaston Julia, son una familia de conjuntos fractales que se obtienen al estudiar el comportamiento de los números complejos al ser iterados por una función.
+
+Una familia muy importante de conjuntos de Julia se obtiene a partir de funciones cuadráticas simples,como por ejemplo: $Fc(z) = z2 + c$  , donde $c$  es un número complejo. Como por ejemplo:
+
+ ![juliaejemplo](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton5.png)
+
+El conjunto de Julia que se obtiene a partir de esta función se denota **$Jc$**. El proceso para  obtener este conjunto de Julia de  es el siguiente:
+Se elige un número complejo cualquiera z y se va construyendo una sucesión de números de la siguiente manera:
+
+$$z_{0} = z$$
+$$z_{1} = F(z_{0})= z_{02} + c$$
+$$z_{2} = F(z_{1}) =z_{12}+c$$
+$$z_{n+1} =  F(z_{n}) =z_{n2}+c$$
+
+   Si esta sucesión queda acotada, entonces se dice que z pertenece al conjunto de Julia de parámetro $c$, denotado por **$Jc$**; de lo contrario, si la sucesión tiende al infinito, z queda excluido de éste. Es fácil deducir que obtener un conjunto de Julia resulta muy laborioso, pues el proceso anterior habría que repetirlo para cualquier número complejo z, e ir decidiendo en cada caso si dicho número pertenece o no al conjunto **$Jc$**. Debido a la infinidad de cálculos que se necesitaban  para  obtener la gráfica correspondiente, se tuvo que esperar hasta los años ochenta para poder  representar estos conjuntos. Pero gracias a todos los avances computacionales se logro porfin verlos en una pantalla, lastimosamente Gaston Julia no alcanzo a verlo por si mismo:
+### ***Algunos Fractales*** 
+ Los siguientes ejemplos de fractales son realizados con codigo Python, donde se relacionan funciones polonomiales y/o trigonometricas.
+ 
+**-** los paquetes necesarios para la implementación de los codigos de los fractales son:
  
      
