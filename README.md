@@ -32,7 +32,7 @@ from PIL import Image
 import numpy as np
  ```
  
- #### *Ejemplo 1* $f(z)= z^{3}+z^{2}$
+#### *Ejemplo 1* - $f(z)= z^{3}+z^{2}$
 ```
 def f(z):
   return z**5+z**2
@@ -65,7 +65,7 @@ image
 ```
 ![newton1](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton1.png)
 
- #### *Ejemplo 2* $f(z)= z+z^{2}-z^{3}$
+#### *Ejemplo 2* - $f(z)= z+z^{2}-z^{3}$
  ```
  def f(z):
   return z+z**2-z**3
@@ -98,7 +98,7 @@ image
  ```
  ![newton2](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton2.png)
  
- #### *Ejemplo 3* $f(z)= \sin(z^{3})$
+#### *Ejemplo 3* - $f(z)= \sin(z^{3})$
  ```
  def f(z):
   return np.sin(z**3)
@@ -131,7 +131,7 @@ image
  ```
  ![newton3](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton3.png)
  
-#### *Ejemplo 4* $f(z)= \cos(z)+z^{5}-\sin(z)$
+#### *Ejemplo 4* - $f(z)= \cos(z)+z^{5}-\sin(z)$
  ```
  def f(z):
   return np.cos(z)+z**5-np.sin(z)
@@ -164,7 +164,7 @@ image
  ```
  ![newton4](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton4.png)
  
- #### *Ejemplo 5* $f(z)= (z^{7}-z^{5})*\sin(z)$
+#### *Ejemplo 5* - $f(z)= (z^{7}-z^{5})*\sin(z)$
  ```
  def f(z):
   return (z**7-z**5)*np.sin(z)
