@@ -16,13 +16,13 @@ MathJax.Hub.Queue(function() {
 });
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
 # Fractales de Newton, Raíces complejas
-  
+
 ## ***Definición*** 
-Cuando la búsqueda de la solución de un problema de aplicación implica la resolución de ecuaciones no lineales se hace uso de métodos numéricos. Siendo el método de Newton uno de los más usados debido a su versatilidad y agilidad, es de gran interés emplearlo especialmente para aproximar soluciones de sistemas de ecuaciones no lineales. Solucionar ecuaciones con variable compleja a través del método de Newton tiene una aplicación muy interesante en el campo de los fractales como es la del problema de Cayley y las figuras fractales que se producen a partir de la convergencia, divergencia e incluso la eficiencia del método. En este artículo se muestra el estudio del problema de Cayley a través de la generalización del método de Newton a $\mathds{R}^{2}$. Además, se presentan algunos fractales producidos por iteraciones del método de Newton en los complejos.
+Cuando la búsqueda de la solución de un problema de aplicación implica la resolución de ecuaciones no lineales se hace uso de métodos numéricos. Siendo el método de Newton uno de los más usados debido a su versatilidad y agilidad, es de gran interés emplearlo especialmente para aproximar soluciones de sistemas de ecuaciones no lineales. Solucionar ecuaciones con variable compleja a través del método de Newton tiene una aplicación muy interesante en el campo de los fractales como es la del problema de Cayley y las figuras fractales que se producen a partir de la convergencia, divergencia e incluso la eficiencia del método. En este artículo se muestra el estudio del problema de Cayley a través de la generalización del método de Newton a $\mathbb R^{2}$. Además, se presentan algunos fractales producidos por iteraciones del método de Newton en los complejos.
   
-  
- ### ***Algunos Fractales*** 
+### ***Algunos Fractales*** 
  Los siguientes ejemplos de fractales son realizados con codigo Python, donde se relacionan funciones polonomiales y/o trigonometricas.
  
 **-** los paquetes necesarios para la implementación de los codigos de los fractales son:
@@ -200,7 +200,7 @@ image
 
 # Conjuntos De Julia
  
- ## ***Definición*** 
+## ***Definición*** 
 Dado un sistema dinámico complejo ( C , f ) se define el conjunto de Julia asociado a f , J ( f ) , como el conjunto de sus puntos periódicos repulsivos. Existen varias técnicas asociadas a cada sistema dinámico (dependiendo de la función f ). Vamos a describir fundamentalmente la determinación de los conjuntos de Julia asociados a los sistemas dinámicos complejos cuadráticos, que son los basados en la función f ( z ) = z ^ 2 + c, siendo c un numero complejo.
  
      
