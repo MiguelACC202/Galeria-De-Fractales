@@ -4,6 +4,7 @@
   
   
  ***Algunos Fractales*** Los siguientes ejemplos de fractales son realizados con codigo Python, donde se relacionan funciones polonomiales y/o trigonometricas.
+ 
  **-** los paquetes necesarios para la implementación de los codigos de los fractales son:
  ```
  import matplotlib.pyplot as plt
