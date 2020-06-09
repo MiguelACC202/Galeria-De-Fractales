@@ -203,8 +203,10 @@ image
 ## ***Definición*** 
 Los conjuntos de Julia, así llamados por el matemático Gaston Julia, son una familia de conjuntos fractales que se obtienen al estudiar el comportamiento de los números complejos al ser iterados por una función.
 
-Una familia muy importante de conjuntos de Julia se obtiene a partir de funciones cuadráticas simples,como por ejemplo: $Fc(z) = z2 + c$  , donde $c$  es un número complejo. Como por ejemplo:
-$$f(z)=z^{2}+c, donde c=-0.8,+0.156i$$
+Una familia muy importante de conjuntos de Julia se obtiene a partir de funciones cuadráticas simples,como por ejemplo: $Fc(z) = z^{2} + c$  , donde $c$  es un número complejo. Como por ejemplo:
+
+$$f(z)=z^{2}+c$$, donde $$c=-0.8,+0.156i$$
+
 ![juliaejemplo](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/ejemplojulia.png)
 
 El conjunto de Julia que se obtiene a partir de esta función se denota **$Jc$**. El proceso para  obtener este conjunto de Julia de  es el siguiente:
@@ -215,7 +217,7 @@ $$z_{1} = F(z_{0})= z_{02} + c$$
 $$z_{2} = F(z_{1}) =z_{12}+c$$
 $$z_{n+1} =  F(z_{n}) =z_{n2}+c$$
 
-   Si esta sucesión queda acotada, entonces se dice que z pertenece al conjunto de Julia de parámetro $c$, denotado por **$Jc$**; de lo contrario, si la sucesión tiende al infinito, z queda excluido de éste. Es fácil deducir que obtener un conjunto de Julia resulta muy laborioso, pues el proceso anterior habría que repetirlo para cualquier número complejo z, e ir decidiendo en cada caso si dicho número pertenece o no al conjunto **$Jc$**. Debido a la infinidad de cálculos que se necesitaban  para  obtener la gráfica correspondiente, se tuvo que esperar hasta los años ochenta para poder  representar estos conjuntos. Pero gracias a todos los avances computacionales se logro porfin verlos en una pantalla, lastimosamente Gaston Julia no alcanzo a verlo por si mismo:
+Si esta sucesión queda acotada, entonces se dice que z pertenece al conjunto de Julia de parámetro $c$, denotado por **$Jc$**; de lo contrario, si la sucesión tiende al infinito, z queda excluido de éste. Es fácil deducir que obtener un conjunto de Julia resulta muy laborioso, pues el proceso anterior habría que repetirlo para cualquier número complejo z, e ir decidiendo en cada caso si dicho número pertenece o no al conjunto **$Jc$**. Debido a la infinidad de cálculos que se necesitaban  para  obtener la gráfica correspondiente, se tuvo que esperar hasta los años ochenta para poder  representar estos conjuntos. Pero gracias a todos los avances computacionales se logro porfin verlos en una pantalla, lastimosamente Gaston Julia no alcanzo a verlo por si mismo:
 ### ***Algunos Fractales*** 
  Los siguientes ejemplos de fractales son realizados con codigo Python, donde se relacionan funciones polonomiales y/o trigonometricas.
 
@@ -226,7 +228,7 @@ from PIL import Image
 import numpy as np
  ```
  
-#### *Ejemplo 1* - $f(z)= z^{5}+c, donde \^[c=-1-i\]$
+#### *Ejemplo 1* - $f(z)= z^{5}+c$, donde $c=-1-i$
 ```
 imgx=800
 imgy=800
@@ -254,45 +256,10 @@ for y in range (imgy):
             image.putpixel((x,y),(r,g,b))
 image
 ```
-![newton1](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/julia1.png)
+![julia1](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/julia1.png)
 
-#### *Ejemplo 2* - $f(z)= z+z^{2}-z^{3}$
+#### *Ejemplo 2* - $f(z)= \sin(z^{3})+c$, donde $c=-1-i$
  ```
- def f(z):
-  return z+z**2-z**3
-imgx=800
-imgy=800
-image=Image.new("RGB",(imgx,imgy))
-xa=-2
-xb=2
-ya=-2
-yb=2
-maxit=202
-h=1e-6
-eps=1e-3
-for y in range (imgy):
-    zy=y*(yb-ya)/(imgy-1)+ya
-    for x in range (imgx):
-        zx=x*(xb-xa)/(imgx-1)+xa
-        z=complex(zx,zy)
-        for i in range (maxit):
-            dz=(f(z+complex(h,h))-f(z))/complex(h,h)
-            z0=z-f(z)/dz
-            if abs (z0-z)<eps:
-                break
-            z=z0
-            r=i*46
-            g=i*12
-            b=i*32
-            image.putpixel((x,y),(r,g,b))
-image
- ```
- ![newton2](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton2.png)
- 
-#### *Ejemplo 3* - $f(z)= \sin(z^{3})$
- ```
- def f(z):
-  return np.sin(z**3)
 imgx=800
 imgy=800
 image=Image.new("RGB",(imgx,imgy))
@@ -300,56 +267,82 @@ xa=-3
 xb=3
 ya=-3
 yb=3
-maxit=202
-h=1e-6
-eps=1e-3
+maxit=30
+def f(z):
+    return np.sin(z**3)+complex(-1,-1)
 for y in range (imgy):
     zy=y*(yb-ya)/(imgy-1)+ya
     for x in range (imgx):
         zx=x*(xb-xa)/(imgx-1)+xa
         z=complex(zx,zy)
         for i in range (maxit):
-            dz=(f(z+complex(h,h))-f(z))/complex(h,h)
-            z0=z-f(z)/dz
-            if abs (z0-z)<eps:
+            z0=f(z)
+            if abs(z)>1000:
                 break
             z=z0
-            r=i*48
-            g=i*12
-            b=i*12
+            r=i*25
+            g=i*25
+            b=i*112
             image.putpixel((x,y),(r,g,b))
 image
  ```
- ![newton3](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton3.png)
+ ![julia2](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/julia2.png)
  
-#### *Ejemplo 4* - $f(z)= \cos(z)+z^{5}-\sin(z)$
+#### *Ejemplo 3* - $f(z)= \tan(z^{3})-5z^{5}+c$, donde $c=0.2+0.5i$
  ```
- def f(z):
-  return np.cos(z)+z**5-np.sin(z)
 imgx=800
 imgy=800
 image=Image.new("RGB",(imgx,imgy))
-xa=-2
-xb=2
-ya=-2
-yb=2
-maxit=202
-h=1e-6
-eps=1e-3
+xa=-1
+xb=1
+ya=-1
+yb=1
+maxit=30
+def f(z):
+    return np.tan(z**3)-5*z**5+complex(0.2,0.5)
 for y in range (imgy):
     zy=y*(yb-ya)/(imgy-1)+ya
     for x in range (imgx):
         zx=x*(xb-xa)/(imgx-1)+xa
         z=complex(zx,zy)
         for i in range (maxit):
-            dz=(f(z+complex(h,h))-f(z))/complex(h,h)
-            z0=z-f(z)/dz
-            if abs (z0-z)<eps:
+            z0=f(z)
+            if abs(z)>1000:
                 break
             z=z0
-            r=i*63
-            g=i*190
-            b=i*63
+            r=i*220
+            g=i*20
+            b=i*60
+            image.putpixel((x,y),(r,g,b))
+image
+ ```
+ ![julia3](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/julia3.png)
+ 
+#### *Ejemplo 4* - $f(z)= \sin(z)*z^{3}-\np.cos(z)*z^{2}+z*c$, donde $c=0.2+0.5i$
+ ```
+imgx=800
+imgy=800
+image=Image.new("RGB",(imgx,imgy))
+xa=-5
+xb=5
+ya=-5
+yb=5
+maxit=30
+def f(z):
+    return (np.sin(z))*z**3-(np.cos(z))*z**2+z*complex(np.tan(0.6),0.36)
+for y in range (imgy):
+    zy=y*(yb-ya)/(imgy-1)+ya
+    for x in range (imgx):
+        zx=x*(xb-xa)/(imgx-1)+xa
+        z=complex(zx,zy)
+        for i in range (maxit):
+            z0=f(z)
+            if abs(z)>1000:
+                break
+            z=z0
+            r=i*255
+            g=i*99
+            b=i*71
             image.putpixel((x,y),(r,g,b))
 image
  ```
