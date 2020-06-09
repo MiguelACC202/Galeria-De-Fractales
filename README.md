@@ -318,7 +318,7 @@ image
  ```
  ![julia3](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/julia3.png)
  
-#### *Ejemplo 4* - $f(z)= z^{3}\sin(z)-z^{2}\np.cos(z)+zc$, donde $c=0.2+0.5i$
+#### *Ejemplo 4* - $f(z)= z^{3}\sin(z)-z^{2}\cos(z)+zc$, donde $c=0.2+0.5i$
  ```
 imgx=800
 imgy=800
