@@ -318,7 +318,7 @@ image
  ```
  ![julia3](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/julia3.png)
  
-#### *Ejemplo 4* - $f(z)= \sin(z)*z^{3}-\np.cos(z)*z^{2}+z*c$, donde $c=0.2+0.5i$
+#### *Ejemplo 4* - $f(z)= z^{3}\sin(z)-z^{2}\np.cos(z)+zc$, donde $c=0.2+0.5i$
  ```
 imgx=800
 imgy=800
@@ -346,6 +346,6 @@ for y in range (imgy):
             image.putpixel((x,y),(r,g,b))
 image
  ```
- ![newton4](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton4.png)
+ ![julia4](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/julia4.png)
  
      
