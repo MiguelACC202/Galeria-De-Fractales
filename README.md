@@ -23,9 +23,9 @@ MathJax.Hub.Queue(function() {
 Cuando la búsqueda de la solución de un problema de aplicación implica la resolución de ecuaciones no lineales se hace uso de métodos numéricos. Siendo el método de Newton uno de los más usados debido a su versatilidad y agilidad, es de gran interés emplearlo especialmente para aproximar soluciones de sistemas de ecuaciones no lineales. Solucionar ecuaciones con variable compleja a través del método de Newton tiene una aplicación muy interesante en el campo de los fractales como es la del problema de Cayley y las figuras fractales que se producen a partir de la convergencia, divergencia e incluso la eficiencia del método. En este artículo se muestra el estudio del problema de Cayley a través de la generalización del método de Newton a $\mathbb R^{2}$. Además, se presentan algunos fractales producidos por iteraciones del método de Newton en los complejos.
   
 ### ***Algunos Fractales*** 
- Los siguientes ejemplos de fractales son realizados con codigo Python, donde se relacionan funciones polonomiales y/o trigonometricas.
+ Los siguientes ejemplos de fractales son realizados con código Python, donde se relacionan funciones polonomiales y/o trigonométricas.
  
-**-** los paquetes necesarios para la implementación de los codigos de los fractales son:
+**-** los paquetes necesarios para la implementación de los códigos de los fractales son:
  ```
 import matplotlib.pyplot as plt
 from PIL import Image
@@ -219,9 +219,9 @@ $$z_{n+1} =  F(z_{n}) =z_{n2}+c$$
 
 Si esta sucesión queda acotada, entonces se dice que z pertenece al conjunto de Julia de parámetro $c$, denotado por **$Jc$**; de lo contrario, si la sucesión tiende al infinito, z queda excluido de éste. Es fácil deducir que obtener un conjunto de Julia resulta muy laborioso, pues el proceso anterior habría que repetirlo para cualquier número complejo z, e ir decidiendo en cada caso si dicho número pertenece o no al conjunto **$Jc$**. Debido a la infinidad de cálculos que se necesitaban  para  obtener la gráfica correspondiente, se tuvo que esperar hasta los años ochenta para poder  representar estos conjuntos. Pero gracias a todos los avances computacionales se logro porfin verlos en una pantalla, lastimosamente Gaston Julia no alcanzo a verlo por si mismo:
 ### ***Algunos Fractales*** 
- Los siguientes ejemplos de fractales son realizados con codigo Python, donde se relacionan funciones polonomiales y/o trigonometricas.
+ Los siguientes ejemplos de fractales son realizados con código Python, donde se relacionan funciones polonomiales y/o trigonométricas.
 
-**-** los paquetes necesarios para la implementación de los codigos de los fractales son:
+**-** los paquetes necesarios para la implementación de los códigos de los fractales son:
  ```
 import matplotlib.pyplot as plt
 from PIL import Image
