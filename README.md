@@ -35,4 +35,23 @@ for y in range (imgy):
 image
 ```
 ![newton1](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton1.png)
+
+ *Ejemplo 2* $f(z)= z+z^{2}-z^{3}$
+ ```
+ 
+ ```
+ ![newton1](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton1.png)
+  *Ejemplo 3* $f(z)= z^{3}+z^{2}$
+ ```
+ 
+ ```
+ ![newton1](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton1.png)
+ *Ejemplo 4* $f(z)= z^{3}+z^{2}$
+ ```
+ 
+ ```
+ ![newton1](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/Newton1.png) *Ejemplo 1* $f(z)= z^{3}+z^{2}$
+ 
+ 
+ 
      
