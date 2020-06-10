@@ -486,3 +486,22 @@ ax.axis("off")
 plt.show()
 ```
 ![fractal3d](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/fractal3d.png)
+
+
+
+
+
+
+
+# Cibergrafía
+**1.** Graphene Themes, Aprendemos Matemáticas.CONJUNTOS DE JULIA Y MANDELBROT. Recuperado el 6 de septiembre de 2020, disponible en:http://www3.gobiernodecanarias.org/medusa/ecoblog/mrodperv/fractales/conjuntos-de-julia-y-mandelbrot/f.
+
+**2.** J. Terán Tarapués, C. Rúa Alvarez (2018). WEL MÉTODO DE NEWTON PARA RAÍCES COMPLEJAS. FRACTALES EN EL PROBLEMA DE CAYLEY (Revista EIA, vol. 15, núm. 29, 2018). [En línea]. Recuperado el 6 de septiembre de 2020. Disponible en: https://www.redalyc.org/jatsRepo/1492/149256546008/html/index.html 
+
+**3.** J. Llopis. Sistema de Funciones Iteradas: Fractales Autosemejantes. Recuperado el 7 de septiembre de 2020, disponible en: https://www.matesfacil.com/fractales/autosemejantes/fractal-autosemejante-definicion-ejemplos-funcion-propiedades-teorema-punto-fijo-compacto-iteraciones-sistema-contractivas-iteradas-galeria.html.
+
+**4.** M. Díaz Kusztricn (20 de enero de 2017).3Dibujar fractales con Sistemas de Funciones Iteradas (IFS). Recuperado el 8 de septiembre de 2020, disponible en: http://software-tecnico-libre.es/es/articulo-por-tema/todas-las-secciones/todos-los-temas/todos-los-articulos/dibujar-con-sistemas-de-funciones-iteradas.
+
+**5.** DIVULGARE (23 mayo, 2011).Fractales en 3D. Recuperado el 9 de septiembre de 2020, disponible en: http://www.divulgare.net/fractales-en-3d/.
+
+**6.** A. Strumia (2011).3D fractal landscapes, Rendering structures as wholes or by sequential or randomprocesses. Recuperado el 9 de septiembre de 2020, disponible en:http://inters.org/files/research/forminfo/04_chapter_04.pdf.
