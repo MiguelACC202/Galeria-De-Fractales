@@ -348,4 +348,141 @@ image
  ```
  ![julia4](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/julia4.png)
  
-     
+## Sistemas de funciones iteradas
+Los sistemas de funciones iteradas son conjuntos de n transformaciones afines contractivas. Normalmente se utilizan dos tipos de algoritmos, el algoritmo determinista y el algoritmo aleatorio.
+
+**-** El algoritmo determinista trata de tomar un conjunto de puntos, de cualquier figura geométrica, y aplicarle cada una de las $n$ transformaciones afines del sistema, con lo cual obtenemos $n$ conjuntos de puntos transformados. A cada uno de ellos le volvemos a aplicar cada una de las $n$ funciones, obteniendo $n^{2}$ nuevos conjuntos de puntos. como por ejemplo:
+
+#### Triangulo de sierpinski,
+el cual, sin importar con que figura se implemente el atgoritmo se llegara a la misma transformación compuesta por triangulos. costruimos el algoritmo mediante el siguiente código Python
+```
+import numpy as np
+import matplotlib.pyplot as plt
+fig=plt.figure()
+ax=plt.gca()
+Tri=np.array([[0,0],[1,0],[0,1],[0,0]])
+plt.scatter(Tri.transpose()[0],Tri.transpose()[1])
+plt.plot(Tri.transpose()[0],Tri.transpose()[1])
+ax.set_xticks(np.arange(-0.2,1.4,0.2))
+ax.set_yticks(np.arange(-0.2,1.4,0.2))
+plt.grid()
+ax.axis("equal")
+fig=plt.figure()
+ax=plt.gca()
+Tri=np.array([[0,0]])
+for i in range(8):
+    tritrans=np.array([transafin([[0.5,0],[0,0.5]],[0,0],i) for i in Tri])
+    tritrans2=np.array([transafin([[0.5,0],[0,0.5]],[0,0.5],i) for i in Tri])
+    tritrans3=np.array([transafin([[0.5,0],[0,0.5]],[0.5,0],i) for i in Tri])
+    Tri=np.concatenate((tritrans,tritrans2,tritrans3))
+plt.scatter(Tri.transpose()[0],Tri.transpose()[1],color='black',s=0.2)
+ax.set_xticks(np.arange(-0.2,1.4,0.2))
+ax.set_yticks(np.arange(-0.2,1.4,0.2))
+plt.grid()
+ax.axis("equal")
+```
+![triangulo](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/triangulo.png)
+
+**-** *De la misma forma para un conjunto de cuadros con una tranformación adicional en su algoritmo, da como resultado el siguiente SIF determinista*
+```
+fig=plt.figure()
+ax=plt.gca()
+Tri=np.array([[0,0],[1,0],[1,1],[0,1],[0,0]])
+for i in range(4):
+  tritrans=np.array([transafin([[0.5,0],[0,0.5]],[0,0],i) for i in Tri])
+  tritrans2=np.array([transafin([[0.5,0],[0,0.5]],[0,0.5],i) for i in Tri])
+  tritrans3=np.array([transafin([[0.5,0],[0,0.5]],[0.5,0],i) for i in Tri])
+  tritrans4=np.array([transafin([[0.5,0],[0,0.5]],[0.5,0],i) for i in Tri])
+  Tri=np.concatenate((tritrans,tritrans2,tritrans3,tritrans4))
+plt.scatter(tritrans.transpose()[0],tritrans.transpose()[1],color='g', s=0.1)
+plt.scatter(tritrans2.transpose()[0],tritrans2.transpose()[1],color='r', s=0.1)
+plt.scatter(tritrans3.transpose()[0],tritrans3.transpose()[1],color='b', s=0.1)
+ax.set_xticks(np.arange(-0.2,1.4,0.2))
+ax.set_yticks(np.arange(-0.2,1.4,0.2))
+plt.grid()
+ax.axis("equal")
+```
+![determinista](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/deterministico.png)
+
+**-** El algoritmo aleatorio es similar, pero en lugar de aplicar las funciones a un conjunto de puntos, las aplicamos sobre un único punto, que vamos dibujando. A cada una de las transformaciones del sistema le asignamos un valor de probabilidad, teniendo en cuenta que la suma total de los valores de probabilidad de las funciones debe valer 1. En cada iteración del algoritmo, seleccionamos una de las transformaciones con probabilidad p. Esto es muy sencillo de hacer, simplemente se obtiene un valor aleatorio entre 0 y 1, por ejemplo la conocida hoja de helecho, para su representacion se utiliza el siguiente codigo Python:
+```
+fig=plt.figure()
+ax=plt.gca()
+Tri=np.array([[0.8,0.8]])
+for i in range(8):
+    tritrans=np.array([transafin([[0,0],[0,0.16]],[0,0],i) for i in Tri])
+    tritrans2=np.array([transafin([[0.85,0.04],[-0.04,0.85]],[0,1.60],i) for i in Tri])
+    tritrans3=np.array([transafin([[0.2,0-0.26],[0.23,0.22]],[0,1.60],i) for i in Tri])
+    tritrans4=np.array([transafin([[-0.15,0.28],[0.26,0.24]],[0,0.44],i) for i in Tri])
+    Tri=np.concatenate((tritrans,tritrans2,tritrans3,tritrans4))
+plt.scatter(Tri.transpose()[0],Tri.transpose()[1],color='g',s=0.2)
+plt.grid()
+ax.axis("equal")
+```
+![helecho](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/helecho.png)
+**-** Al igual que la siguiente transformación, donde en lugar de iterar un único punto, se itera diferentes puntos bajo un mismo parametro de algoritmo aleatorio:
+```
+fig=plt.figure()
+ax=plt.gca()
+Tri=np.array([[0,0],[0.5,0],[0.5,0.5],[0,1],[0,0]])
+for i in range(8):
+    tritrans=np.array([transafin([[0,0],[0,(1/3)]],[0,0],i) for i in Tri])
+    tritrans2=np.array([transafin([[0,(2/3)],[(1/3),0]],[0,(1/3)],i) for i in Tri])
+    tritrans3=np.array([transafin([[(1/3),(2/3)],[(2/3),0]],[(1/3),0],i) for i in Tri])
+    tritrans4=np.array([transafin([[(2/3),(1/3)],[(2/3),(2/3)]],[(1/3),(1/3)],i) for i in Tri])
+    Tri=np.concatenate((tritrans,tritrans2,tritrans3,tritrans4))
+plt.scatter(tritrans.transpose()[0],tritrans.transpose()[1],color='g', s=0.1)
+plt.scatter(tritrans2.transpose()[0],tritrans2.transpose()[1],color='r', s=0.1)
+plt.scatter(tritrans3.transpose()[0],tritrans3.transpose()[1],color='b', s=0.1)
+plt.scatter(tritrans4.transpose()[0],tritrans4.transpose()[1],color='y', s=0.1)
+ax.set_xticks(np.arange(-0.5,6,0.5))
+ax.set_yticks(np.arange(-0.5,6,0.5))
+plt.grid()
+ax.axis("equal")
+```
+![aleatorio](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/aleatorio.png)
+
+# Factal 3D
+Gracias tambien a los avances cumpatacionales, hoy podemos disfrutar de paisajes matematicos, gracias a los fractales 3D, un ejemplo de estos puede ser el siguiente contorno de un fractal de Mandelbrot o tambien denominado como una parcela de Mandelbrot, realizado con el siguiente codigo Python:
+```
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.figure as fg
+from matplotlib import cm
+import numpy as np 
+
+fig = plt.figure() 
+ax = fig.add_subplot(111, projection='3d')
+ax.view_init(azim=120,elev=45) 
+
+ax.dist = 5 
+ax.set_facecolor([0.05,0.05,0.05]) 
+n = 16 
+dx = -0.6 
+dy = 0.03 
+L = 1.3 
+Max = 200
+
+def f(Z):
+    return np.e**(-np.abs(Z))
+
+x = np.linspace(-L+dx,L+dx,M)
+y = np.linspace(-L+dy,L+dy,M)
+X,Y = np.meshgrid(x,y)
+Z = np.zeros(Max)
+W = np.zeros((Max,Max))
+C = X + 1j*Y 
+
+for k in range(1,n+1):
+    ZZ = Z**2 + C
+    Z = ZZ
+    W = f(Z)
+   
+ax.set_xlim(dx-L,dx+L) 
+ax.set_zlim(dy-L,dy+L) 
+ax.set_zlim(-0.2*L,1.35*L)  
+ax.contourf3D(X, Y, W, 2*n, cmap="magma") 
+ax.axis("off")
+plt.show()
+```
+![fractal3d](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/fractal3d.png)
