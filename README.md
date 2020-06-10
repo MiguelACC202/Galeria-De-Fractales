@@ -443,7 +443,7 @@ ax.axis("equal")
 ![aleatorio](https://raw.githubusercontent.com/MiguelACC202/Galeria-De-Fractales/master/aleatorio.png)
 
 # Factal 3D
-Gracias tambien a los avances cumpatacionales, hoy podemos disfrutar de paisajes matematicos, gracias a los fractales 3D, un ejemplo de estos puede ser el siguiente contorno de un fractal de Mandelbrot o tambien denominado como una parcela de Mandelbrot, realizado con el siguiente codigo Python:
+Gracias también a los avances computacionales, hoy podemos disfrutar de paisajes matemáticos, tales como los fractales 3D, un ejemplo de estos puede ser el siguiente contorno de un fractal de Mandelbrot o también denominado como una parcela de Mandelbrot, realizado con el siguiente código Python:
 ```
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
